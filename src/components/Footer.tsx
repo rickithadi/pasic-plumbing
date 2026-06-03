@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: 'oklch(10% 0.01 55)',
+        background: 'var(--bg-2)',
         borderTop: '1px solid var(--border)',
         padding: '3.5rem clamp(1.25rem, 4vw, 2rem) 2rem',
       }}

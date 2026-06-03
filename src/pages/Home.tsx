@@ -122,15 +122,15 @@ export default function Home() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5rem',
-              background: 'var(--accent-dim)',
-              border: '1px solid var(--border-accent)',
+              background: 'oklch(0% 0 0 / 0.35)',
+              border: '1px solid oklch(100% 0 0 / 0.2)',
               borderRadius: '4px',
               padding: '0.35rem 0.85rem',
               marginBottom: '1.75rem',
             }}
           >
-            <Shield size={13} style={{ color: 'var(--accent)' }} />
-            <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--accent)' }}>
+            <Shield size={13} style={{ color: 'oklch(80% 0.12 234)' }} />
+            <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(90% 0.005 55)' }}>
               Licensed · ROC200219 K-37
             </span>
           </motion.div>
@@ -198,19 +198,19 @@ export default function Home() {
                 alignItems: 'flex-start',
                 gap: '0.1rem',
                 fontFamily: 'var(--font-display)',
-                color: 'var(--fg)',
+                color: 'oklch(96% 0.005 55)',
                 textDecoration: 'none',
                 padding: '0.75rem 1.5rem',
                 borderRadius: '4px',
-                border: '1px solid oklch(40% 0.01 55)',
+                border: '1px solid oklch(100% 0 0 / 0.25)',
                 transition: 'border-color 0.2s',
                 minHeight: '52px',
                 justifyContent: 'center',
               }}
-              onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = 'var(--border-accent)' }}
-              onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = 'oklch(40% 0.01 55)' }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = 'oklch(100% 0 0 / 0.55)' }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = 'oklch(100% 0 0 / 0.25)' }}
             >
-              <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(60% 0.01 55)' }}>Chicagoland</span>
+              <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(80% 0.008 55)' }}>Chicagoland</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontWeight: 800, fontSize: 'clamp(0.85rem, 2vw, 1rem)', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
                 <Phone size={13} />312-375-5548
               </span>
@@ -226,15 +226,15 @@ export default function Home() {
                 fontSize: 'clamp(0.9rem, 2vw, 1rem)',
                 letterSpacing: '0.07em',
                 textTransform: 'uppercase',
-                color: 'oklch(65% 0.01 55)',
+                color: 'oklch(78% 0.008 55)',
                 textDecoration: 'none',
                 padding: '0.75rem 1.4rem',
                 borderRadius: '4px',
                 transition: 'color 0.2s',
                 minHeight: '52px',
               }}
-              onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.color = 'var(--fg)' }}
-              onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.color = 'oklch(65% 0.01 55)' }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.color = 'white' }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.color = 'oklch(78% 0.008 55)' }}
             >
               View Services
               <ChevronRight size={15} />
@@ -622,10 +622,10 @@ export default function Home() {
           }}
         >
           <motion.div {...mv()}>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.8rem, 4vw, 3rem)', textTransform: 'uppercase', lineHeight: 0.95, color: 'var(--bg)', marginBottom: '0.5rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.8rem, 4vw, 3rem)', textTransform: 'uppercase', lineHeight: 0.95, color: 'white', marginBottom: '0.5rem' }}>
               Ready to Get<br />the Job Done?
             </h2>
-            <p style={{ color: 'oklch(14% 0.012 55 / 0.65)', fontSize: '0.9rem', marginTop: '0.5rem' }}>
+            <p style={{ color: 'oklch(100% 0 0 / 0.72)', fontSize: '0.9rem', marginTop: '0.5rem' }}>
               Call now or send a message — we respond fast.
             </p>
           </motion.div>
@@ -642,7 +642,7 @@ export default function Home() {
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
                 color: 'var(--accent)',
-                background: 'var(--bg)',
+                background: 'white',
                 textDecoration: 'none',
                 padding: '0.9rem 1.8rem',
                 borderRadius: '4px',
@@ -665,16 +665,16 @@ export default function Home() {
                 fontSize: '1rem',
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
-                color: 'var(--bg)',
+                color: 'white',
                 textDecoration: 'none',
                 padding: '0.9rem 1.8rem',
                 borderRadius: '4px',
-                border: '2px solid oklch(14% 0.012 55 / 0.35)',
+                border: '2px solid oklch(100% 0 0 / 0.4)',
                 transition: 'border-color 0.2s',
                 minHeight: '48px',
               }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'oklch(14% 0.012 55 / 0.75)' }}
-              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'oklch(14% 0.012 55 / 0.35)' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'oklch(100% 0 0 / 0.75)' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'oklch(100% 0 0 / 0.4)' }}
             >
               Send a Message
             </Link>

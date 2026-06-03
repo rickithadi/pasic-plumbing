@@ -109,10 +109,10 @@ export default function WaterHeaters() {
                 }}
               >
                 <div>
-                  <p style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.3rem, 3vw, 2rem)', textTransform: 'uppercase', color: 'var(--fg)' }}>
+                  <p style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.3rem, 3vw, 2rem)', textTransform: 'uppercase', color: 'white' }}>
                     Tankless & Tank Water Heaters
                   </p>
-                  <p style={{ color: 'oklch(93% 0.008 55 / 0.7)', fontSize: '0.9rem' }}>Gas & Electric · All Major Brands</p>
+                  <p style={{ color: 'oklch(100% 0 0 / 0.78)', fontSize: '0.9rem' }}>Gas & Electric · All Major Brands</p>
                 </div>
                 <a
                   href="tel:4804780447"
@@ -165,12 +165,12 @@ export default function WaterHeaters() {
                   fontWeight: 900,
                   fontSize: '1.2rem',
                   textTransform: 'uppercase',
-                  color: 'var(--bg)',
+                  color: 'white',
                   letterSpacing: '0.03em',
                 }}>
                   Tankless
                 </p>
-                <p style={{ fontSize: '0.8rem', color: 'oklch(14% 0.012 55 / 0.7)', marginTop: '0.2rem' }}>
+                <p style={{ fontSize: '0.8rem', color: 'oklch(100% 0 0 / 0.78)', marginTop: '0.2rem' }}>
                   On-demand hot water · Best for efficiency
                 </p>
               </div>

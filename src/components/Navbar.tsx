@@ -49,9 +49,9 @@ export default function Navbar() {
         right: 0,
         zIndex: 50,
         transition: 'background 0.3s, border-color 0.3s',
-        background: scrolled ? 'oklch(14% 0.012 55 / 0.96)' : 'transparent',
+        background: scrolled ? 'oklch(97% 0.005 55 / 0.96)' : 'transparent',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid oklch(28% 0.01 55)' : '1px solid transparent',
+        borderBottom: scrolled ? '1px solid oklch(82% 0.007 55)' : '1px solid transparent',
       }}
     >
       <nav
