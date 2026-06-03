@@ -86,10 +86,10 @@ export default function About() {
                 left: '1.5rem',
                 right: '1.5rem',
               }}>
-                <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1rem', color: 'var(--fg)' }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1rem', color: 'white' }}>
                   Pasic Plumbing Contractors
                 </p>
-                <p style={{ fontSize: '0.8rem', color: 'var(--accent)', fontFamily: 'var(--font-display)', fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase' }}>
+                <p style={{ fontSize: '0.8rem', color: 'oklch(82% 0.12 234)', fontFamily: 'var(--font-display)', fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase' }}>
                   Scottsdale, AZ · Est. 1989
                 </p>
               </div>

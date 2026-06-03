@@ -384,13 +384,13 @@ export default function Contact() {
                     alignItems: 'center',
                     gap: '0.6rem',
                     padding: '0.85rem 1rem',
-                    background: 'oklch(30% 0.09 42 / 0.3)',
-                    border: '1px solid var(--border-accent)',
+                    background: 'oklch(95% 0.05 75)',
+                    border: '1px solid oklch(80% 0.12 75)',
                     borderRadius: '4px',
                     fontSize: '0.88rem',
-                    color: 'var(--fg)',
+                    color: 'oklch(35% 0.06 60)',
                   }}>
-                    <AlertCircle size={16} style={{ color: 'var(--accent)', flexShrink: 0 }} />
+                    <AlertCircle size={16} style={{ color: 'oklch(60% 0.15 60)', flexShrink: 0 }} />
                     <span>
                       {!import.meta.env.VITE_FORMSPREE_ID
                         ? 'The contact form isn\'t set up yet. Please call us directly at '

@@ -2,18 +2,18 @@
 
 /* ── Design tokens ───────────────────────────────────────────── */
 :root {
-  /* Brand palette — industrial desert warmth */
-  --bg:           oklch(14% 0.012 55);
-  --bg-2:         oklch(18% 0.012 55);
-  --bg-3:         oklch(22% 0.012 55);
-  --fg:           oklch(93% 0.008 55);
-  --fg-muted:     oklch(65% 0.01 55);
-  --accent:       oklch(62% 0.18 42);
-  --accent-hover: oklch(68% 0.20 42);
-  --accent-dim:   oklch(30% 0.09 42);
-  --gold:         oklch(76% 0.12 60);
-  --border:       oklch(28% 0.01 55);
-  --border-accent:oklch(40% 0.12 42);
+  /* Light professional palette — warm off-white base, blue accent */
+  --bg:           oklch(97% 0.005 55);    /* warm off-white */
+  --bg-2:         oklch(93% 0.006 55);    /* warm light gray */
+  --bg-3:         oklch(88% 0.008 55);    /* warm medium gray */
+  --fg:           oklch(15% 0.015 55);    /* warm near-black */
+  --fg-muted:     oklch(45% 0.012 55);    /* warm gray-brown */
+  --accent:       oklch(50% 0.17 234);    /* professional blue */
+  --accent-hover: oklch(44% 0.19 234);    /* darker blue */
+  --accent-dim:   oklch(91% 0.08 234);    /* very light blue tint */
+  --gold:         oklch(65% 0.14 55);     /* warm amber */
+  --border:       oklch(82% 0.007 55);    /* light gray */
+  --border-accent:oklch(68% 0.14 234);    /* blue-tinted border */
 
   --font-display: 'Barlow Condensed', system-ui, sans-serif;
   --font-body:    'Barlow', system-ui, sans-serif;
@@ -67,7 +67,7 @@ body {
   top: -60px;
   left: 1rem;
   background: var(--accent);
-  color: var(--bg);
+  color: white;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.85rem;
@@ -82,14 +82,6 @@ body {
 .skip-link:focus {
   top: 0;
 }
-
-/* ── Nav hover via CSS ────────────────────────────────────────── */
-.nav-link:hover { color: var(--fg) !important; }
-.nav-link-muted:hover { color: var(--accent) !important; }
-.footer-link:hover { color: var(--accent) !important; }
-
-/* ── Body scroll lock ─────────────────────────────────────────── */
-body.nav-open { overflow: hidden; }
 
 /* ── Services row — responsive thumbnail layout ─────────────── */
 .service-row {
@@ -110,7 +102,15 @@ body.nav-open { overflow: hidden; }
   }
 }
 
+/* ── Nav hover via CSS ────────────────────────────────────────── */
+.nav-link:hover { color: var(--fg) !important; }
+.nav-link-muted:hover { color: var(--accent) !important; }
+.footer-link:hover { color: var(--accent) !important; }
+
+/* ── Body scroll lock ─────────────────────────────────────────── */
+body.nav-open { overflow: hidden; }
+
 /* ── Scrollbar ───────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-track { background: var(--bg-2); }
 ::-webkit-scrollbar-thumb { background: var(--border-accent); border-radius: 3px; }

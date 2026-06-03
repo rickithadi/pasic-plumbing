@@ -263,13 +263,13 @@ export default function Services() {
               fontWeight: 900,
               fontSize: 'clamp(1.6rem, 4vw, 2.6rem)',
               textTransform: 'uppercase',
-              color: 'var(--bg)',
+              color: 'white',
               marginBottom: '0.4rem',
               lineHeight: 0.95,
             }}>
               Ready to Schedule?
             </h2>
-            <p style={{ color: 'oklch(14% 0.012 55 / 0.65)', fontSize: '0.9rem' }}>
+            <p style={{ color: 'oklch(100% 0 0 / 0.72)', fontSize: '0.9rem' }}>
               Call your region — we respond fast and give honest quotes.
             </p>
           </motion.div>
@@ -286,7 +286,7 @@ export default function Services() {
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
                 color: 'var(--accent)',
-                background: 'var(--bg)',
+                background: 'white',
                 textDecoration: 'none',
                 padding: '0.85rem 1.5rem',
                 borderRadius: '4px',
@@ -306,12 +306,12 @@ export default function Services() {
                 fontSize: '0.95rem',
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
-                color: 'var(--bg)',
+                color: 'white',
                 background: 'transparent',
                 textDecoration: 'none',
                 padding: '0.85rem 1.5rem',
                 borderRadius: '4px',
-                border: '2px solid oklch(14% 0.012 55 / 0.35)',
+                border: '2px solid oklch(100% 0 0 / 0.4)',
                 minHeight: '48px',
               }}
             >
