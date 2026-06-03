@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
-import { Phone, ChevronRight, Shield } from 'lucide-react'
+import { Phone, ChevronRight, Shield, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const fadeUp = (delay = 0) => ({
@@ -29,28 +30,69 @@ const WX = 'https://static.wixstatic.com/media'
 const wx = (hash: string, file: string, w = 400, h = 300) =>
   `${WX}/${hash}/v1/fill/w_${w},h_${h},al_c,q_85,usm_0.66_1.00_0.01,enc_auto,quality_auto/${file}`
 
+const heroImage = wx(
+  '8358d6_9807e46cff3049cbbc23a8a8f0474790~mv2.jpg',
+  '8358d6_9807e46cff3049cbbc23a8a8f0474790~mv2.jpg',
+  1600,
+  900,
+)
+
 const clients = [
   {
     name: 'Arizona Biltmore Resort',
     type: 'Luxury Hotel · Phoenix, AZ',
-    img: wx('8358d6_9807e46cff3049cbbc23a8a8f0474790~mv2.jpg', 'project.jpg'),
+    assets: [
+      {
+        src: wx('8358d6_e004bcabaa814f0ca65527688c4af2c4~mv2.jpg', '322462278_688122806199656_3400783026293574836_n_edited.jpg', 720, 460),
+        alt: 'Arizona Biltmore Resort commercial plumbing project',
+      },
+      {
+        src: wx('8358d6_f282cfe7cdca463aaa9e88f0e157ff6f~mv2.jpg', '4B7A0780_JPG.jpg', 720, 460),
+        alt: 'Arizona Biltmore Resort exterior project photo',
+      },
+    ],
   },
   {
     name: 'ALDI Grocery Stores',
     type: 'Retail Chain · Multiple Locations',
-    img: wx('8358d6_aba3d9d35faa4dd6abdf3932f2adef76~mv2.jpg', 'azplumber.jpg'),
+    assets: [
+      {
+        src: wx('8358d6_78a584bd980f4d789fc19a3aec6e50d9~mv2.jpg', 'arizona-plumber.jpg', 720, 460),
+        alt: 'ALDI grocery store commercial plumbing work',
+      },
+      {
+        src: wx('8358d6_f5b295de598847a29b4880e04e39bbd8~mv2.jpg', '8358d6_f5b295de598847a29b4880e04e39bbd8~mv2.jpg', 720, 545),
+        alt: 'ALDI grocery store plumbing installation',
+      },
+      {
+        src: wx('8358d6_faa61d6f7d93400d816fa3dddf47dc55~mv2.jpg', '8358d6_faa61d6f7d93400d816fa3dddf47dc55~mv2.jpg', 720, 545),
+        alt: 'ALDI grocery store commercial service area',
+      },
+      {
+        src: wx('8358d6_d2a2d1e7148e4f92bb873d056e270b4e~mv2.jpg', '8358d6_d2a2d1e7148e4f92bb873d056e270b4e~mv2.jpg', 720, 545),
+        alt: 'ALDI grocery store plumbing project detail',
+      },
+    ],
   },
   {
     name: 'White Castle',
     type: 'Restaurant · Scottsdale, AZ',
-    img: null,
     videoId: 'OBwn9n_8n4g',
     videoStart: 89,
   },
   {
     name: 'Navy Federal Union',
     type: 'Financial Services · Goodyear, AZ',
-    img: wx('8358d6_78a584bd980f4d789fc19a3aec6e50d9~mv2.jpg', 'arizona-plumber.jpg'),
+    assets: [
+      {
+        src: wx('8358d6_994044ca969245d690de3a0496ec95ce~mv2.jpg', 'arizona%20commercial%20plumber.jpg', 720, 540),
+        alt: 'Navy Federal Union commercial plumbing project in Goodyear',
+      },
+      {
+        src: wx('8358d6_aba3d9d35faa4dd6abdf3932f2adef76~mv2.jpg', 'azplumber.jpg', 720, 460),
+        alt: 'Navy Federal Union commercial plumbing site work',
+      },
+    ],
   },
 ]
 
@@ -75,6 +117,23 @@ const testimonials = [
 export default function Home() {
   const reduced = useReducedMotion()
   const mv = (delay = 0) => reduced ? {} : fadeUp(delay)
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
+
+  useEffect(() => {
+    if (!lightbox) return
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightbox(null)
+    }
+
+    document.body.style.overflow = 'hidden'
+    document.addEventListener('keydown', onKey)
+
+    return () => {
+      document.body.style.overflow = ''
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [lightbox])
 
   return (
     <main id="main-content" style={{ paddingTop: '68px' }}>
@@ -93,9 +152,9 @@ export default function Home() {
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: `url(https://static.wixstatic.com/media/8358d6_f282cfe7cdca463aaa9e88f0e157ff6f~mv2.jpg/v1/fill/w_1600,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_auto,quality_auto/4B7A0780_JPG.jpg)`,
+            backgroundImage: `url(${heroImage})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center 40%',
+            backgroundPosition: 'center 72%',
           }}
         />
         {/* Overlay — left heavy to ensure text legibility, right opens up to show the photo */}
@@ -103,7 +162,7 @@ export default function Home() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(100deg, oklch(12% 0.015 55 / 0.93) 0%, oklch(13% 0.013 55 / 0.78) 50%, oklch(14% 0.012 55 / 0.40) 100%)',
+            background: 'linear-gradient(100deg, oklch(10% 0.015 55 / 0.96) 0%, oklch(11% 0.013 55 / 0.88) 46%, oklch(14% 0.012 55 / 0.50) 100%)',
           }}
         />
         <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: 'linear-gradient(to bottom, var(--accent), transparent)' }} />
@@ -143,6 +202,8 @@ export default function Home() {
               lineHeight: 0.95,
               letterSpacing: '-0.01em',
               textTransform: 'uppercase',
+              color: 'oklch(96% 0.006 55)',
+              textShadow: '0 2px 18px oklch(0% 0 0 / 0.35)',
               marginBottom: 'clamp(1rem, 2vw, 1.5rem)',
               maxWidth: '820px',
             }}
@@ -477,7 +538,7 @@ export default function Home() {
                 }}
               >
                 {/* Client row header */}
-                <div style={{ display: 'grid', gridTemplateColumns: '3rem 1fr', gap: '1.25rem', alignItems: 'center', marginBottom: c.img || c.videoId ? '1.25rem' : '0' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '3rem 1fr', gap: '1.25rem', alignItems: 'center', marginBottom: c.assets || c.videoId ? '1.25rem' : '0' }}>
                   <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem', color: 'var(--accent)', opacity: 0.45, lineHeight: 1 }}>
                     {String(i + 1).padStart(2, '0')}
                   </span>
@@ -492,21 +553,29 @@ export default function Home() {
                 </div>
 
                 {/* Tied asset — photo or video from source site */}
-                {c.img && (
-                  <div style={{ marginLeft: '4.25rem' }}>
-                    <div style={{ borderRadius: '5px', overflow: 'hidden', aspectRatio: '16/7', maxWidth: '640px' }}>
-                      <img
-                        src={c.img}
-                        alt={`${c.name} — Pasic Plumbing commercial work`}
-                        loading="lazy"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                      />
-                    </div>
+                {c.assets && (
+                  <div className="client-assets">
+                    {c.assets.map((asset) => (
+                      <button
+                        type="button"
+                        key={asset.src}
+                        className="client-asset-frame"
+                        aria-label={`Open ${asset.alt}`}
+                        onClick={() => setLightbox(asset)}
+                      >
+                        <img
+                          src={asset.src}
+                          alt={asset.alt}
+                          loading="lazy"
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                        />
+                      </button>
+                    ))}
                   </div>
                 )}
 
                 {c.videoId && (
-                  <div style={{ marginLeft: '4.25rem' }}>
+                  <div className="client-assets">
                     <div style={{ position: 'relative', aspectRatio: '16/9', borderRadius: '5px', overflow: 'hidden', background: 'var(--bg-3)', maxWidth: '640px' }}>
                       <iframe
                         src={`https://www.youtube.com/embed/${c.videoId}?start=${c.videoStart}&rel=0&modestbranding=1`}
@@ -607,6 +676,29 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {lightbox && (
+        <div
+          className="image-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={lightbox.alt}
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            type="button"
+            className="image-lightbox-close"
+            aria-label="Close image preview"
+            onClick={() => setLightbox(null)}
+          >
+            <X size={22} />
+          </button>
+          <figure className="image-lightbox-figure" onClick={(e) => e.stopPropagation()}>
+            <img src={lightbox.src} alt={lightbox.alt} className="image-lightbox-img" />
+            <figcaption className="image-lightbox-caption">{lightbox.alt}</figcaption>
+          </figure>
+        </div>
+      )}
 
       {/* ── CTA Banner ───────────────────────────────────────── */}
       <section style={{ background: 'var(--accent)', padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 2rem)' }}>

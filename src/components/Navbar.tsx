@@ -23,10 +23,6 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    setOpen(false)
-  }, [location.pathname])
-
-  useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
@@ -212,6 +208,7 @@ export default function Navbar() {
                 <Link
                   key={l.to}
                   to={l.to}
+                  onClick={() => setOpen(false)}
                   style={{
                     fontFamily: 'var(--font-display)',
                     fontWeight: 600,

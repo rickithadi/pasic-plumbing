@@ -9,6 +9,8 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1], delay },
 })
 
+const aboutHeroImage = 'https://static.wixstatic.com/media/8358d6_73c99322e90c41f796b71cd7cde775e2~mv2.jpg/v1/fill/w_960,h_405,fp_0.60_0.49,q_85,enc_avif,quality_auto/8358d6_73c99322e90c41f796b71cd7cde775e2~mv2.jpg'
+
 export default function About() {
   const reduced = useReducedMotion()
   const mv = (delay = 0) => reduced ? {} : fadeUp(delay)
@@ -19,19 +21,39 @@ export default function About() {
       {/* Page header */}
       <section
         style={{
-          padding: 'clamp(3.5rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem) clamp(2rem, 4vw, 3rem)',
+          position: 'relative',
+          overflow: 'hidden',
+          minHeight: 'clamp(380px, 52vh, 560px)',
+          padding: 'clamp(4rem, 10vw, 7rem) clamp(1.25rem, 4vw, 2rem) clamp(2.5rem, 5vw, 4rem)',
           borderBottom: '1px solid var(--border)',
-          background: 'var(--bg-2)',
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: `url(${aboutHeroImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: '60% 49%',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(100deg, oklch(10% 0.015 55 / 0.92) 0%, oklch(11% 0.013 55 / 0.72) 48%, oklch(14% 0.012 55 / 0.34) 100%)',
+          }}
+        />
+        <div style={{ position: 'relative', maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
           <p style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 700,
             fontSize: '0.75rem',
             letterSpacing: '0.18em',
             textTransform: 'uppercase',
-            color: 'var(--accent)',
+            color: 'oklch(80% 0.12 234)',
             marginBottom: '0.75rem',
           }}>
             Family-Owned · Scottsdale, AZ
@@ -43,11 +65,13 @@ export default function About() {
             textTransform: 'uppercase',
             lineHeight: 0.95,
             marginBottom: '1.25rem',
+            color: 'oklch(96% 0.006 55)',
+            textShadow: '0 2px 18px oklch(0% 0 0 / 0.35)',
           }}>
             35+ Years.<br />
-            <span style={{ color: 'var(--fg-muted)', fontWeight: 400 }}>One Family.</span>
+            <span style={{ color: 'oklch(82% 0.008 55)', fontWeight: 400 }}>One Family.</span>
           </h1>
-          <p style={{ color: 'var(--fg-muted)', maxWidth: '540px', lineHeight: 1.75, fontSize: '1.05rem' }}>
+          <p style={{ color: 'oklch(84% 0.008 55)', maxWidth: '540px', lineHeight: 1.75, fontSize: '1.05rem' }}>
             Pasic Plumbing Contractors is a local, family-owned and operated plumbing contractor located in Scottsdale, AZ, providing services to the Phoenix Valley and Chicagoland areas.
           </p>
         </div>

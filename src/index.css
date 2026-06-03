@@ -107,6 +107,96 @@ body {
 .nav-link-muted:hover { color: var(--accent) !important; }
 .footer-link:hover { color: var(--accent) !important; }
 
+/* ── Commercial client gallery ──────────────────────────────── */
+.client-assets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+  max-width: 760px;
+  margin-left: 4.25rem;
+}
+
+.client-asset-frame {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 5px;
+  background: var(--bg-3);
+  cursor: zoom-in;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.client-asset-frame:hover,
+.client-asset-frame:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px oklch(15% 0.015 55 / 0.18);
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 2rem);
+  background: oklch(4% 0.01 55 / 0.88);
+}
+
+.image-lightbox-close {
+  position: fixed;
+  top: clamp(1rem, 3vw, 1.5rem);
+  right: clamp(1rem, 3vw, 1.5rem);
+  z-index: 201;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid oklch(100% 0 0 / 0.22);
+  border-radius: 4px;
+  color: oklch(96% 0.006 55);
+  background: oklch(0% 0 0 / 0.35);
+  cursor: pointer;
+}
+
+.image-lightbox-close:hover,
+.image-lightbox-close:focus-visible {
+  background: oklch(100% 0 0 / 0.12);
+}
+
+.image-lightbox-figure {
+  max-width: min(1120px, 100%);
+  max-height: calc(100vh - 4rem);
+}
+
+.image-lightbox-img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 7rem);
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 24px 70px oklch(0% 0 0 / 0.45);
+}
+
+.image-lightbox-caption {
+  margin-top: 0.75rem;
+  color: oklch(88% 0.006 55);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 640px) {
+  .client-assets {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+}
+
 /* ── Body scroll lock ─────────────────────────────────────────── */
 body.nav-open { overflow: hidden; }
 
