@@ -91,6 +91,25 @@ body {
 /* ── Body scroll lock ─────────────────────────────────────────── */
 body.nav-open { overflow: hidden; }
 
+/* ── Services row — responsive thumbnail layout ─────────────── */
+.service-row {
+  display: grid;
+  grid-template-columns: 88px 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+@media (max-width: 480px) {
+  .service-row {
+    grid-template-columns: 64px 1fr;
+    gap: 1rem;
+  }
+  .service-row .service-link {
+    display: none;
+  }
+}
+
 /* ── Scrollbar ───────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }

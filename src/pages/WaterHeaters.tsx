@@ -50,7 +50,7 @@ export default function WaterHeaters() {
             color: 'var(--accent)',
             marginBottom: '0.75rem',
           }}>
-            Water Heaters
+            Tank &amp; Tankless
           </p>
           <h1 style={{
             fontFamily: 'var(--font-display)',
@@ -323,7 +323,28 @@ export default function WaterHeaters() {
                 minHeight: '48px',
               }}
             >
-              <Phone size={16} /> 480-478-0447
+              <Phone size={16} /> Phoenix Valley
+            </a>
+            <a
+              href="tel:3123755548"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.6rem',
+                fontFamily: 'var(--font-display)',
+                fontWeight: 700,
+                fontSize: '1rem',
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+                color: 'var(--fg)',
+                textDecoration: 'none',
+                padding: '0.9rem 1.8rem',
+                borderRadius: '4px',
+                border: '1px solid var(--border)',
+                minHeight: '48px',
+              }}
+            >
+              <Phone size={16} /> Chicagoland
             </a>
             <Link
               to="/contact"

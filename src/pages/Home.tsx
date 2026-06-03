@@ -489,8 +489,7 @@ export default function Home() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div {...mv()} style={{ marginBottom: '3rem' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(2rem, 5vw, 3.5rem)', textTransform: 'uppercase', lineHeight: 0.95 }}>
-              In Their<br />
-              <span style={{ color: 'var(--fg-muted)', fontWeight: 400 }}>Words</span>
+              In Their Words
             </h2>
           </motion.div>
 
@@ -520,7 +519,7 @@ export default function Home() {
                 <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem' }}>
                   {testimonials[0].author}
                 </p>
-                <p style={{ color: 'var(--fg-muted)', fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 500, letterSpacing: '0.06em' }}>
+                <p style={{ color: 'var(--fg-muted)', fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 500, letterSpacing: '0.04em' }}>
                   {testimonials[0].context}
                 </p>
               </div>

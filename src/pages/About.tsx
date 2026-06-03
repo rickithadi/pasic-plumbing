@@ -34,7 +34,7 @@ export default function About() {
             color: 'var(--accent)',
             marginBottom: '0.75rem',
           }}>
-            About Us
+            Family-Owned · Scottsdale, AZ
           </p>
           <h1 style={{
             fontFamily: 'var(--font-display)',
@@ -86,11 +86,11 @@ export default function About() {
                 left: '1.5rem',
                 right: '1.5rem',
               }}>
-                <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--fg)' }}>
-                  Duke (Dusko) Pasic
+                <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1rem', color: 'var(--fg)' }}>
+                  Pasic Plumbing Contractors
                 </p>
-                <p style={{ fontSize: '0.85rem', color: 'var(--accent)', fontFamily: 'var(--font-display)', fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase' }}>
-                  Owner & Master Plumber
+                <p style={{ fontSize: '0.8rem', color: 'var(--accent)', fontFamily: 'var(--font-display)', fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase' }}>
+                  Scottsdale, AZ · Est. 1989
                 </p>
               </div>
             </div>

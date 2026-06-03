@@ -107,7 +107,7 @@ export default function Services() {
             color: 'var(--accent)',
             marginBottom: '0.75rem',
           }}>
-            Services
+            What We Offer
           </p>
           <h1 style={{
             fontFamily: 'var(--font-display)',
@@ -121,29 +121,52 @@ export default function Services() {
             <span style={{ color: 'var(--fg-muted)', fontWeight: 400 }}>Residential Services</span>
           </h1>
           <p style={{ color: 'var(--fg-muted)', maxWidth: '520px', lineHeight: 1.75, fontSize: '1.05rem', marginBottom: '2rem' }}>
-            From routine maintenance to complex commercial installations — 13 core services backed by 35+ years of expertise.
+            Routine maintenance, emergency repairs, and full commercial installations — backed by 35+ years of hands-on expertise.
           </p>
-          <a
-            href="tel:4804780447"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.6rem',
-              fontFamily: 'var(--font-display)',
-              fontWeight: 800,
-              fontSize: '1rem',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              color: 'var(--bg)',
-              background: 'var(--accent)',
-              textDecoration: 'none',
-              padding: '0.8rem 1.6rem',
-              borderRadius: '4px',
-              minHeight: '48px',
-            }}
-          >
-            <Phone size={16} /> Call for a Quote
-          </a>
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+            <a
+              href="tel:4804780447"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.6rem',
+                fontFamily: 'var(--font-display)',
+                fontWeight: 800,
+                fontSize: '0.95rem',
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+                color: 'var(--bg)',
+                background: 'var(--accent)',
+                textDecoration: 'none',
+                padding: '0.75rem 1.5rem',
+                borderRadius: '4px',
+                minHeight: '48px',
+              }}
+            >
+              <Phone size={15} /> Phoenix Valley
+            </a>
+            <a
+              href="tel:3123755548"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.6rem',
+                fontFamily: 'var(--font-display)',
+                fontWeight: 700,
+                fontSize: '0.95rem',
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+                color: 'var(--fg)',
+                textDecoration: 'none',
+                padding: '0.75rem 1.5rem',
+                borderRadius: '4px',
+                border: '1px solid var(--border)',
+                minHeight: '48px',
+              }}
+            >
+              <Phone size={15} /> Chicagoland
+            </a>
+          </div>
         </div>
       </section>
 
@@ -160,14 +183,8 @@ export default function Services() {
                   viewport: { once: true, margin: '-40px' },
                   transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
                 })}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '88px 1fr auto',
-                  gap: '1.5rem',
-                  alignItems: 'center',
-                  padding: '1.5rem 0',
-                  borderBottom: '1px solid var(--border)',
-                }}
+                className="service-row"
+                style={{ display: 'grid' }}
               >
                 {/* Real thumbnail from Pasic Plumbing source site */}
                 <div style={{ borderRadius: '4px', overflow: 'hidden', width: '88px', height: '66px', flexShrink: 0 }}>
@@ -195,6 +212,7 @@ export default function Services() {
                 {service.link ? (
                   <Link
                     to={service.link}
+                    className="service-link"
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -213,7 +231,7 @@ export default function Services() {
                     Details <ChevronRight size={13} />
                   </Link>
                 ) : (
-                  <div style={{ minWidth: '60px' }} />
+                  <div className="service-link" style={{ minWidth: '60px' }} />
                 )}
               </motion.div>
             ))}
