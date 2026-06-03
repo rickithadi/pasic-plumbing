@@ -253,31 +253,37 @@ export default function WaterHeaters() {
             </p>
           </motion.div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '1.5rem',
-          }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
             {[
-              ['No Hot Water', 'Pilot light, thermostat, heating element — we find the cause.'],
-              ['Leaking Tank', 'Valve replacement or tank replacement — we give you an honest assessment.'],
-              ['Rust or Sediment', 'Flushing and anode rod replacement to extend tank life.'],
-              ['Strange Noises', 'Sediment buildup causes rumbling — we clean and diagnose.'],
-            ].map(([title, desc]) => (
+              ['No Hot Water', 'Pilot light, thermostat, or heating element — we diagnose the cause on the first visit.'],
+              ['Leaking Tank', 'Valve or full tank replacement — we give you an honest assessment before any work starts.'],
+              ['Rust or Sediment', 'Flushing and anode rod replacement extends tank life significantly.'],
+              ['Strange Noises', 'Sediment buildup causes rumbling. We clean and diagnose to prevent bigger issues.'],
+            ].map(([title, desc], i) => (
               <motion.div
                 key={title}
-                {...mv()}
+                {...(reduced ? {} : {
+                  initial: { opacity: 0, x: -10 },
+                  whileInView: { opacity: 1, x: 0 },
+                  viewport: { once: true, margin: '-40px' },
+                  transition: { duration: 0.4, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] },
+                })}
                 style={{
-                  padding: '1.5rem',
-                  background: 'var(--bg-3)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '6px',
+                  display: 'grid',
+                  gridTemplateColumns: '1.5rem 1fr',
+                  gap: '1rem',
+                  padding: '1.25rem 0',
+                  borderBottom: '1px solid var(--border)',
+                  alignItems: 'start',
                 }}
               >
-                <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1rem', marginBottom: '0.5rem' }}>
-                  {title}
-                </p>
-                <p style={{ color: 'var(--fg-muted)', fontSize: '0.875rem', lineHeight: 1.65 }}>{desc}</p>
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent)', marginTop: '7px', flexShrink: 0, display: 'block' }} />
+                <div>
+                  <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1rem', marginBottom: '0.3rem' }}>
+                    {title}
+                  </p>
+                  <p style={{ color: 'var(--fg-muted)', fontSize: '0.875rem', lineHeight: 1.65 }}>{desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>

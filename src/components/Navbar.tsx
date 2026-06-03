@@ -227,27 +227,49 @@ export default function Navbar() {
                   {l.label}
                 </Link>
               ))}
-              <a
-                href="tel:4804780447"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  marginTop: '0.75rem',
-                  fontFamily: 'var(--font-display)',
-                  fontWeight: 700,
-                  fontSize: '1rem',
-                  color: 'var(--bg)',
-                  background: 'var(--accent)',
-                  textDecoration: 'none',
-                  padding: '0.85rem 1.25rem',
-                  borderRadius: '4px',
-                  justifyContent: 'center',
-                }}
-              >
-                <Phone size={16} />
-                Call 480-478-0447
-              </a>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.75rem' }}>
+                <a
+                  href="tel:4804780447"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 700,
+                    fontSize: '1rem',
+                    color: 'var(--bg)',
+                    background: 'var(--accent)',
+                    textDecoration: 'none',
+                    padding: '0.85rem 1.25rem',
+                    borderRadius: '4px',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Phone size={16} />
+                  Phoenix Valley · 480-478-0447
+                </a>
+                <a
+                  href="tel:3123755548"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 600,
+                    fontSize: '0.9rem',
+                    color: 'var(--fg)',
+                    background: 'var(--bg-3)',
+                    border: '1px solid var(--border)',
+                    textDecoration: 'none',
+                    padding: '0.75rem 1.25rem',
+                    borderRadius: '4px',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Phone size={14} />
+                  Chicagoland · 312-375-5548
+                </a>
+              </div>
             </motion.div>
           </>
         )}
