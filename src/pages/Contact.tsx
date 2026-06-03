@@ -81,7 +81,7 @@ export default function Contact() {
   }
 
   return (
-    <main style={{ paddingTop: '68px' }}>
+    <main id="main-content" style={{ paddingTop: '68px' }}>
 
       {/* Page header */}
       <section

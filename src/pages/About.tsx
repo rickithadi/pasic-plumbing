@@ -14,7 +14,7 @@ export default function About() {
   const mv = (delay = 0) => reduced ? {} : fadeUp(delay)
 
   return (
-    <main style={{ paddingTop: '68px' }}>
+    <main id="main-content" style={{ paddingTop: '68px' }}>
 
       {/* Page header */}
       <section
