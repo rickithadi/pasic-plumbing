@@ -9,59 +9,76 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1], delay },
 })
 
+const WX = 'https://static.wixstatic.com/media'
+const img = (hash: string, file: string, w = 460, h = 340) =>
+  `${WX}/${hash}/v1/fill/w_${w},h_${h},al_c,q_85,usm_0.66_1.00_0.01,enc_auto,quality_auto/${file}`
+
 const services = [
   {
     name: 'Water Heater Installation & Repair',
-    description: 'Expert installation, repair, and replacement of traditional tank and tankless water heaters. We handle all major brands and both gas and electric systems.',
+    description: 'Expert installation, repair, and replacement of traditional tank and tankless water heaters. All major brands, gas and electric.',
     link: '/water-heaters',
+    img: img('8358d6_cfeaac2065fc4bbf859062bfd5fd7761~mv2.jpg', 'rheem-tankless-water-heater_edited.jpg'),
   },
   {
     name: 'Sewer Surveillance',
-    description: "High-definition camera inspections to diagnose blockages, root intrusions, and pipe damage without unnecessary excavation. Know exactly what's happening underground.",
+    description: "Camera inspections to diagnose blockages, root intrusions, and pipe damage — no unnecessary excavation.",
+    img: img('8358d6_6af6e30f327d442d8a0aafab3abc7f5a~mv2.jpg', 'drain_line_sewer_inspection_edited.jpg'),
   },
   {
     name: 'Faucet Installation & Repair',
-    description: 'Installation and repair of all faucet types — kitchen, bathroom, utility, and outdoor. We work with all major brands and fix drips, leaks, and pressure issues.',
+    description: 'Kitchen, bathroom, utility, and outdoor faucets. We fix drips, leaks, and pressure issues on all major brands.',
+    img: img('8358d6_49d087c512584845bf2e7d57dc734821~mv2.jpg', 'Leaky-Faucet.jpg'),
   },
   {
     name: 'Instant Hot Water Recirculating Line',
-    description: 'Stop waiting for hot water. We install recirculating pump systems that deliver instant hot water to every tap, reducing water waste and improving comfort.',
+    description: 'Recirculating pump systems for instant hot water at every tap — reduces water waste and wait time.',
+    img: img('672c31391dfd4a759a58b154cffd85a9.jpg', 'Pipe%20Testing.jpg'),
   },
   {
     name: 'Toilets',
-    description: 'Complete toilet installation, repair, and replacement. From running toilets to full replacements, we handle the work cleanly and efficiently.',
+    description: 'Installation, repair, and full replacement. From running toilets to complete unit swaps, done cleanly and efficiently.',
+    img: img('8358d6_f4526840bfb647f0b8080e2d312b1acc~mv2.jpg', 'toilets.jpg'),
   },
   {
     name: 'Water Softener',
-    description: 'Installation and service of water softener systems. Protect your pipes, appliances, and fixtures from hard water mineral buildup — especially important in Phoenix Valley.',
+    description: 'System installation and service. Protect pipes, appliances, and fixtures from hard water buildup — especially important in Phoenix Valley.',
+    img: img('8358d6_e307b3db5c1146af8e953aa3845e2d88~mv2.jpg', 'Water-Softeners.jpg'),
   },
   {
     name: 'Sewer Line Repair',
-    description: 'Full sewer line repair and replacement, including trenchless options where possible. We diagnose the problem accurately before recommending the right solution.',
+    description: 'Full sewer line repair and replacement including trenchless options. Accurate diagnosis before we recommend anything.',
+    img: img('8358d6_ea9483a24aee4de2a09f7fad0b80d48c~mv2.jpg', 'Water-Sewer-Repiping.jpg'),
   },
   {
     name: 'Water Line Repair',
-    description: 'Water main and supply line repair for both residential and commercial properties. Fast, effective, and minimally disruptive.',
+    description: 'Water main and supply line repair for residential and commercial. Fast, effective, and minimally disruptive.',
+    img: img('8358d6_9b2b3c7c978a4226a6f39a19d703ecfc~mv2.jpg', 'Water-Leak.jpg'),
   },
   {
     name: 'Sump & Sewage Pump',
-    description: 'Installation and service of sump pumps and sewage ejector pumps. Keep your basement dry and your property protected.',
+    description: 'Sump pump and sewage ejector pump installation and service. Keep your basement dry and your property protected.',
+    img: img('8358d6_33e7c19da807455eb6f98b2d431f31ee~mv2.jpg', 'Sump-Sewage-Pumps.jpg'),
   },
   {
     name: 'Gas Piping',
-    description: 'Licensed gas line installation and repair for residential and commercial properties. Safety-first approach to every gas system we touch.',
+    description: 'Licensed gas line installation and repair for residential and commercial. Safety-first on every gas system.',
+    img: img('8358d6_a9a5dc97a5644001a5e5fb72adb6328c~mv2.jpg', 'gas-leaks.jpg'),
   },
   {
     name: 'Underslab Repairs',
-    description: 'Slab leak detection and repair. We locate the problem precisely to minimize damage to your foundation and flooring during the repair process.',
+    description: 'Slab leak detection and repair. We locate the source precisely to minimize damage to your foundation and flooring.',
+    img: img('8358d6_9248b926a6b64785a0255a54605df265~mv2.jpg', 'slab-leaks.jpg'),
   },
   {
     name: 'Garbage Disposal',
-    description: 'Installation and repair of garbage disposal units. Quick turnaround — most jobs completed in a single visit.',
+    description: 'Installation and repair of garbage disposal units. Most jobs completed in a single visit.',
+    img: img('8358d6_de908dbbaf7943abaa7931af7c7ff2fc~mv2.jpg', 'Garbage-disposal.jpg'),
   },
   {
     name: 'Replace Bathtub & Shower',
-    description: 'Full bathtub and shower replacement services. We handle the plumbing side of your bathroom renovation cleanly and on schedule.',
+    description: 'Full bathtub and shower replacement. We handle the plumbing side of your renovation cleanly and on schedule.',
+    img: img('8358d6_3de244245b474110816bc829e8556253~mv2.jpg', 'signature-hardware_edited.jpg'),
   },
 ]
 
@@ -134,49 +151,44 @@ export default function Services() {
       <section style={{ padding: 'var(--section-pad) clamp(1.25rem, 4vw, 2rem)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-            {services.map((service, i) => (
+            {services.map((service) => (
               <motion.div
                 key={service.name}
                 {...(reduced ? {} : {
-                  initial: { opacity: 0, x: -16 },
-                  whileInView: { opacity: 1, x: 0 },
+                  initial: { opacity: 0, y: 12 },
+                  whileInView: { opacity: 1, y: 0 },
                   viewport: { once: true, margin: '-40px' },
-                  transition: { duration: 0.45, delay: 0, ease: [0.22, 1, 0.36, 1] },
+                  transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
                 })}
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: 'auto 1fr auto',
+                  gridTemplateColumns: '88px 1fr auto',
                   gap: '1.5rem',
-                  alignItems: 'start',
-                  padding: '1.75rem 0',
+                  alignItems: 'center',
+                  padding: '1.5rem 0',
                   borderBottom: '1px solid var(--border)',
-                  transition: 'background 0.2s',
                 }}
               >
-                <span
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontWeight: 900,
-                    fontSize: 'clamp(1rem, 2vw, 1.3rem)',
-                    color: 'var(--accent)',
-                    opacity: 0.5,
-                    minWidth: '2.5rem',
-                    paddingTop: '2px',
-                  }}
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </span>
+                {/* Real thumbnail from Pasic Plumbing source site */}
+                <div style={{ borderRadius: '4px', overflow: 'hidden', width: '88px', height: '66px', flexShrink: 0 }}>
+                  <img
+                    src={service.img}
+                    alt={service.name}
+                    loading="lazy"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
                 <div>
                   <h2 style={{
                     fontFamily: 'var(--font-display)',
                     fontWeight: 800,
-                    fontSize: 'clamp(1.1rem, 2.5vw, 1.35rem)',
+                    fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
                     letterSpacing: '0.02em',
-                    marginBottom: '0.5rem',
+                    marginBottom: '0.35rem',
                   }}>
                     {service.name}
                   </h2>
-                  <p style={{ color: 'var(--fg-muted)', lineHeight: 1.7, fontSize: '0.92rem', maxWidth: '600px' }}>
+                  <p style={{ color: 'var(--fg-muted)', lineHeight: 1.6, fontSize: '0.875rem', maxWidth: '600px' }}>
                     {service.description}
                   </p>
                 </div>

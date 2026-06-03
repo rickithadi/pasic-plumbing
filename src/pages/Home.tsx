@@ -35,13 +35,13 @@ const clients = [
 const testimonials = [
   {
     quote: 'Wonderful experience ALWAYS. Pasic Plumbing is an amazing company and wonderful at what they do. Duke is accommodative, friendly, and very dedicated to all of his clients. Thank you Pasic plumbing for being amazing!',
-    author: 'Residential Client',
-    context: 'Repeat customer',
+    author: 'Phoenix Valley',
+    context: 'Residential · Repeat customer',
   },
   {
     quote: 'incredible and honest privately owned company! use them all the time.',
-    author: 'Commercial Client',
-    context: 'Ongoing relationship',
+    author: 'Scottsdale',
+    context: 'Commercial · Ongoing',
   },
   {
     quote: 'Dear Dusko, Thank you for all of your help transforming our side yard. The new spigot and fountain are truly awesome.',
@@ -76,14 +76,14 @@ export default function Home() {
             backgroundPosition: 'center 40%',
           }}
         />
+        {/* Overlay — left heavy to ensure text legibility, right opens up to show the photo */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(105deg, oklch(12% 0.015 55 / 0.97) 0%, oklch(14% 0.012 55 / 0.88) 60%, oklch(14% 0.012 55 / 0.55) 100%)',
+            background: 'linear-gradient(100deg, oklch(12% 0.015 55 / 0.93) 0%, oklch(13% 0.013 55 / 0.78) 50%, oklch(14% 0.012 55 / 0.40) 100%)',
           }}
         />
-        {/* Left copper accent bar */}
         <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: 'linear-gradient(to bottom, var(--accent), transparent)' }} />
 
         <div
@@ -133,7 +133,7 @@ export default function Home() {
           <motion.p {...mv(0.18)}
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.15rem)',
-              color: 'oklch(80% 0.008 55)',
+              color: 'oklch(82% 0.008 55)',
               maxWidth: '480px',
               lineHeight: 1.65,
               marginBottom: '2.5rem',
@@ -151,7 +151,7 @@ export default function Home() {
                 gap: '0.6rem',
                 fontFamily: 'var(--font-display)',
                 fontWeight: 800,
-                fontSize: 'clamp(1rem, 2.5vw, 1.15rem)',
+                fontSize: 'clamp(1rem, 2.5vw, 1.1rem)',
                 letterSpacing: '0.04em',
                 textTransform: 'uppercase',
                 color: 'var(--bg)',
@@ -166,7 +166,7 @@ export default function Home() {
               onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.background = 'var(--accent)'; el.style.transform = 'translateY(0)' }}
             >
               <Phone size={17} />
-              AZ: 480-478-0447
+              Phoenix Valley
             </a>
             <a
               href="tel:3123755548"
@@ -191,7 +191,7 @@ export default function Home() {
               onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = 'oklch(40% 0.01 55)'; el.style.color = 'var(--fg)' }}
             >
               <Phone size={15} />
-              IL: 312-375-5548
+              Chicagoland
             </a>
             <Link
               to="/services"
@@ -214,7 +214,7 @@ export default function Home() {
               onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.color = 'var(--fg)' }}
               onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.color = 'oklch(65% 0.01 55)' }}
             >
-              All Services
+              View Services
               <ChevronRight size={15} />
             </Link>
           </motion.div>
@@ -259,12 +259,9 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* ── Services Grid ─────────────────────────────────────── */}
       <section style={{ padding: 'var(--section-pad) clamp(1.25rem, 4vw, 2rem)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-
-          {/* Asymmetric heading — breaks the eyebrow→title→body pattern */}
           <motion.div {...mv()}
             style={{
               display: 'grid',
@@ -281,13 +278,13 @@ export default function Home() {
               textTransform: 'uppercase',
               lineHeight: 0.95,
             }}>
-              13 Core<br />
-              <span style={{ color: 'var(--accent)' }}>Plumbing</span><br />
-              <span style={{ color: 'var(--fg-muted)', fontWeight: 400 }}>Services</span>
+              Every Plumbing<br />
+              <span style={{ color: 'var(--accent)' }}>Need</span><br />
+              <span style={{ color: 'var(--fg-muted)', fontWeight: 400 }}>Covered</span>
             </h2>
             <div>
               <p style={{ color: 'var(--fg-muted)', lineHeight: 1.75, marginBottom: '1.5rem' }}>
-                From emergency repairs to full commercial installations — we bring three decades of expertise to every job, big or small.
+                From emergency repairs to full commercial installations — three decades of expertise on every job, regardless of scope.
               </p>
               <Link
                 to="/contact"
@@ -310,7 +307,7 @@ export default function Home() {
                 onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'var(--accent-dim)' }}
                 onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent' }}
               >
-                Get a Free Estimate <ChevronRight size={14} />
+                Request a Quote <ChevronRight size={14} />
               </Link>
             </div>
           </motion.div>
@@ -386,52 +383,45 @@ export default function Home() {
             <div style={{ position: 'relative', borderRadius: '6px', overflow: 'hidden', aspectRatio: '4/3' }}>
               <img
                 src="https://static.wixstatic.com/media/8358d6_994044ca969245d690de3a0496ec95ce~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_auto,quality_auto/arizona%20commercial%20plumber.jpg"
-                alt="Pasic Plumbing — Arizona commercial plumbing work"
+                alt="Pasic Plumbing — commercial work in Arizona"
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
               <div style={{ position: 'absolute', bottom: '1.25rem', left: '1.25rem', background: 'var(--accent)', color: 'var(--bg)', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.4rem 0.85rem', borderRadius: '3px' }}>
-                35+ Years
+                Since 1989
               </div>
             </div>
           </motion.div>
 
           <motion.div {...mv(0.1)}>
             <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '0.75rem' }}>
-              Our Story
+              Who We Are
             </p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.8rem, 4vw, 3rem)', textTransform: 'uppercase', lineHeight: 0.95, marginBottom: '1.5rem' }}>
-              Family-Owned<br />
-              <span style={{ color: 'var(--fg-muted)', fontWeight: 400 }}>Built on Trust</span>
+              Local.<br />
+              <span style={{ color: 'var(--fg-muted)', fontWeight: 400 }}>Experienced. Honest.</span>
             </h2>
             <p style={{ color: 'var(--fg-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
-              Pasic Plumbing Contractors is a local, family-owned and operated plumbing contractor headquartered in Scottsdale, AZ. For over 35 years, we've provided reliable plumbing solutions to homeowners and commercial operators across Phoenix Valley and Chicagoland.
+              Pasic Plumbing Contractors is a family-owned plumbing contractor based in Scottsdale, AZ. For over 35 years, Duke Pasic and his team have delivered reliable work to homeowners and commercial clients across Phoenix Valley and Chicagoland.
             </p>
             <p style={{ color: 'var(--fg-muted)', lineHeight: 1.8, marginBottom: '2rem' }}>
-              Every job — whether it's a leaky faucet or a full commercial rough-in — receives the same level of care and expertise. Our clients keep calling back because the work is done right the first time.
+              From a leaky faucet to a full commercial build-out, every job gets the same attention. Our clients include the Arizona Biltmore Resort, ALDI, and Navy Federal Union — and they keep calling back.
             </p>
             <Link
               to="/about"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--accent)', textDecoration: 'none' }}
             >
-              Learn More <ChevronRight size={15} />
+              Our Story <ChevronRight size={15} />
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Commercial Portfolio — editorial list, not emoji cards ── */}
+      {/* ── Commercial Portfolio ─────────────────────────────── */}
       <section style={{ padding: 'var(--section-pad) clamp(1.25rem, 4vw, 2rem)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div {...mv()}>
-            {/* Full-width editorial treatment */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'baseline',
-              gap: '2rem',
-              marginBottom: '3rem',
-              flexWrap: 'wrap',
-            }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
               <h2 style={{
                 fontFamily: 'var(--font-display)',
                 fontWeight: 900,
@@ -440,17 +430,16 @@ export default function Home() {
                 lineHeight: 0.95,
                 flex: '0 0 auto',
               }}>
-                Trusted by<br />
-                <span style={{ color: 'var(--accent)' }}>Major Brands</span>
+                Commercial<br />
+                <span style={{ color: 'var(--accent)' }}>Clients</span>
               </h2>
               <p style={{ color: 'var(--fg-muted)', fontSize: '0.9rem', lineHeight: 1.7, maxWidth: '360px' }}>
-                Commercial-scale work demands precision and reliability. These clients chose Pasic — and keep coming back.
+                Large-scale commercial work demands accuracy and reliability. These clients chose Pasic — and call back.
               </p>
             </div>
           </motion.div>
 
-          {/* Numbered list, not emoji cards */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
             {clients.map((c, i) => (
               <motion.div
                 key={c.name}
@@ -471,14 +460,7 @@ export default function Home() {
                 }}
                 whileHover={reduced ? {} : { paddingLeft: '0.5rem' }}
               >
-                <span style={{
-                  fontFamily: 'var(--font-display)',
-                  fontWeight: 900,
-                  fontSize: '1.1rem',
-                  color: 'var(--accent)',
-                  opacity: 0.45,
-                  lineHeight: 1,
-                }}>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem', color: 'var(--accent)', opacity: 0.45, lineHeight: 1 }}>
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <div>
@@ -496,7 +478,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Testimonials — featured large + two secondary ─────── */}
+      {/* ── Testimonials ─────────────────────────────────────── */}
       <section
         style={{
           background: 'var(--bg-2)',
@@ -506,11 +488,9 @@ export default function Home() {
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div {...mv()} style={{ marginBottom: '3rem' }}>
-            <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '0.75rem' }}>
-              What Clients Say
-            </p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(2rem, 5vw, 3.5rem)', textTransform: 'uppercase', lineHeight: 0.95 }}>
-              Real Reviews
+              In Their<br />
+              <span style={{ color: 'var(--fg-muted)', fontWeight: 400 }}>Words</span>
             </h2>
           </motion.div>
 
@@ -540,7 +520,7 @@ export default function Home() {
                 <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem' }}>
                   {testimonials[0].author}
                 </p>
-                <p style={{ color: 'var(--accent)', fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                <p style={{ color: 'var(--fg-muted)', fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 500, letterSpacing: '0.06em' }}>
                   {testimonials[0].context}
                 </p>
               </div>
@@ -570,7 +550,7 @@ export default function Home() {
                 </p>
                 <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1rem' }}>
                   <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem' }}>{t.author}</p>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--accent)', fontFamily: 'var(--font-display)', fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase' }}>{t.context}</p>
+                  <p style={{ fontSize: '0.75rem', color: 'var(--fg-muted)', fontFamily: 'var(--font-display)', fontWeight: 500, letterSpacing: '0.05em' }}>{t.context}</p>
                 </div>
               </motion.div>
             ))}
@@ -593,10 +573,10 @@ export default function Home() {
         >
           <motion.div {...mv()}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.8rem, 4vw, 3rem)', textTransform: 'uppercase', lineHeight: 0.95, color: 'var(--bg)', marginBottom: '0.5rem' }}>
-              Need a Plumber?
+              Ready to Get<br />the Job Done?
             </h2>
-            <p style={{ color: 'oklch(14% 0.012 55 / 0.65)', fontSize: '0.95rem' }}>
-              Phoenix Valley: 480-478-0447 · Chicagoland: 312-375-5548
+            <p style={{ color: 'oklch(14% 0.012 55 / 0.65)', fontSize: '0.9rem', marginTop: '0.5rem' }}>
+              Call now or send a message — we respond fast.
             </p>
           </motion.div>
           <motion.div {...mv(0.1)} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -623,7 +603,7 @@ export default function Home() {
               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = '1' }}
             >
               <Phone size={16} />
-              Call Now
+              480-478-0447
             </a>
             <Link
               to="/contact"
