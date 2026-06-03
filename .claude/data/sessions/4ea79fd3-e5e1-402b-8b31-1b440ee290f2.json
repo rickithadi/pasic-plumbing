@@ -8,6 +8,8 @@
     "do a pass of the website and make sure we have content and asset priority. make it look more proffesional and less AI. run a critique loop",
     "stop running vercel deploy. isnt it already in the skill file not to do that?",
     "why didnt these iterations continue. its stopped at 2",
-    "ok continue"
+    "ok continue",
+    "use the hero image from the reference url. bake this into the skill to prefer to use same hero asset if possible. extract video asset from reference site and use it in new site",
+    "the video is not the hero, separate issues"
   ]
 }

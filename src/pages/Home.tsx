@@ -25,11 +25,33 @@ const services = [
   'Replace Bathtub & Shower',
 ]
 
+const WX = 'https://static.wixstatic.com/media'
+const wx = (hash: string, file: string, w = 400, h = 300) =>
+  `${WX}/${hash}/v1/fill/w_${w},h_${h},al_c,q_85,usm_0.66_1.00_0.01,enc_auto,quality_auto/${file}`
+
 const clients = [
-  { name: 'Arizona Biltmore Resort', type: 'Luxury Hotel · Phoenix, AZ' },
-  { name: 'ALDI Grocery Stores', type: 'Retail Chain · Multiple Locations' },
-  { name: 'White Castle', type: 'Restaurant · Scottsdale, AZ' },
-  { name: 'Navy Federal Union', type: 'Financial Services · Goodyear, AZ' },
+  {
+    name: 'Arizona Biltmore Resort',
+    type: 'Luxury Hotel · Phoenix, AZ',
+    img: wx('8358d6_9807e46cff3049cbbc23a8a8f0474790~mv2.jpg', 'project.jpg'),
+  },
+  {
+    name: 'ALDI Grocery Stores',
+    type: 'Retail Chain · Multiple Locations',
+    img: wx('8358d6_aba3d9d35faa4dd6abdf3932f2adef76~mv2.jpg', 'azplumber.jpg'),
+  },
+  {
+    name: 'White Castle',
+    type: 'Restaurant · Scottsdale, AZ',
+    img: null,
+    videoId: 'OBwn9n_8n4g',
+    videoStart: 89,
+  },
+  {
+    name: 'Navy Federal Union',
+    type: 'Financial Services · Goodyear, AZ',
+    img: wx('8358d6_78a584bd980f4d789fc19a3aec6e50d9~mv2.jpg', 'arizona-plumber.jpg'),
+  },
 ]
 
 const testimonials = [
@@ -71,7 +93,7 @@ export default function Home() {
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: `url(https://static.wixstatic.com/media/8358d6_e004bcabaa814f0ca65527688c4af2c4~mv2.jpg/v1/fill/w_1600,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_auto,quality_auto/image.jpg)`,
+            backgroundImage: `url(https://static.wixstatic.com/media/8358d6_f282cfe7cdca463aaa9e88f0e157ff6f~mv2.jpg/v1/fill/w_1600,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_auto,quality_auto/4B7A0780_JPG.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center 40%',
           }}
@@ -444,37 +466,66 @@ export default function Home() {
               <motion.div
                 key={c.name}
                 {...(reduced ? {} : {
-                  initial: { opacity: 0, x: -12 },
-                  whileInView: { opacity: 1, x: 0 },
+                  initial: { opacity: 0, y: 14 },
+                  whileInView: { opacity: 1, y: 0 },
                   viewport: { once: true, margin: '-40px' },
                   transition: { duration: 0.45, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] },
                 })}
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: '3rem 1fr auto',
-                  gap: '1.5rem',
-                  alignItems: 'center',
-                  padding: '1.5rem 0',
                   borderBottom: '1px solid var(--border)',
-                  transition: 'padding-left 0.2s',
+                  padding: '1.75rem 0',
                 }}
-                whileHover={reduced ? {} : { paddingLeft: '0.5rem' }}
               >
-                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem', color: 'var(--accent)', opacity: 0.45, lineHeight: 1 }}>
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <div>
-                  <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(1rem, 2.5vw, 1.3rem)', letterSpacing: '0.02em' }}>
-                    {c.name}
-                  </p>
-                  <p style={{ color: 'var(--fg-muted)', fontSize: '0.82rem', marginTop: '0.2rem', letterSpacing: '0.04em' }}>
-                    {c.type}
-                  </p>
+                {/* Client row header */}
+                <div style={{ display: 'grid', gridTemplateColumns: '3rem 1fr', gap: '1.25rem', alignItems: 'center', marginBottom: c.img || c.videoId ? '1.25rem' : '0' }}>
+                  <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem', color: 'var(--accent)', opacity: 0.45, lineHeight: 1 }}>
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(1rem, 2.5vw, 1.3rem)', letterSpacing: '0.02em' }}>
+                      {c.name}
+                    </p>
+                    <p style={{ color: 'var(--fg-muted)', fontSize: '0.82rem', marginTop: '0.2rem', letterSpacing: '0.04em' }}>
+                      {c.type}
+                    </p>
+                  </div>
                 </div>
-                <div style={{ width: '24px', height: '1px', background: 'var(--border-accent)', flexShrink: 0 }} />
+
+                {/* Tied asset — photo or video from source site */}
+                {c.img && (
+                  <div style={{ marginLeft: '4.25rem' }}>
+                    <div style={{ borderRadius: '5px', overflow: 'hidden', aspectRatio: '16/7', maxWidth: '640px' }}>
+                      <img
+                        src={c.img}
+                        alt={`${c.name} — Pasic Plumbing commercial work`}
+                        loading="lazy"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      />
+                    </div>
+                  </div>
+                )}
+
+                {c.videoId && (
+                  <div style={{ marginLeft: '4.25rem' }}>
+                    <div style={{ position: 'relative', aspectRatio: '16/9', borderRadius: '5px', overflow: 'hidden', background: 'var(--bg-3)', maxWidth: '640px' }}>
+                      <iframe
+                        src={`https://www.youtube.com/embed/${c.videoId}?start=${c.videoStart}&rel=0&modestbranding=1`}
+                        title={`${c.name} — Pasic Plumbing commercial project`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        loading="lazy"
+                        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+                      />
+                    </div>
+                    <p style={{ color: 'var(--fg-muted)', fontSize: '0.78rem', marginTop: '0.6rem', letterSpacing: '0.03em' }}>
+                      Time-lapse — Scottsdale, AZ installation
+                    </p>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
+
         </div>
       </section>
 
