@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { Phone, ChevronRight, Shield, Clock, Award, Wrench } from 'lucide-react'
+import { Phone, ChevronRight, Shield } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const fadeUp = (delay = 0) => ({
@@ -37,19 +37,16 @@ const testimonials = [
     quote: 'Wonderful experience ALWAYS. Pasic Plumbing is an amazing company and wonderful at what they do. Duke is accommodative, friendly, and very dedicated to all of his clients. Thank you Pasic plumbing for being amazing!',
     author: 'Residential Client',
     context: 'Repeat customer',
-    featured: true,
   },
   {
     quote: 'incredible and honest privately owned company! use them all the time.',
     author: 'Commercial Client',
     context: 'Ongoing relationship',
-    featured: false,
   },
   {
     quote: 'Dear Dusko, Thank you for all of your help transforming our side yard. The new spigot and fountain are truly awesome.',
     author: 'Homeowner',
     context: 'Exterior project',
-    featured: false,
   },
 ]
 
@@ -145,7 +142,7 @@ export default function Home() {
             35+ years of trusted commercial &amp; residential plumbing across Phoenix Valley and Chicagoland. Family-owned, fully licensed.
           </motion.p>
 
-          <motion.div {...mv(0.25)} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
+          <motion.div {...mv(0.25)} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
             <a
               href="tel:4804780447"
               style={{
@@ -154,7 +151,7 @@ export default function Home() {
                 gap: '0.6rem',
                 fontFamily: 'var(--font-display)',
                 fontWeight: 800,
-                fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
+                fontSize: 'clamp(1rem, 2.5vw, 1.15rem)',
                 letterSpacing: '0.04em',
                 textTransform: 'uppercase',
                 color: 'var(--bg)',
@@ -168,19 +165,19 @@ export default function Home() {
               onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.background = 'var(--accent-hover)'; el.style.transform = 'translateY(-1px)' }}
               onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.background = 'var(--accent)'; el.style.transform = 'translateY(0)' }}
             >
-              <Phone size={18} />
-              480-478-0447
+              <Phone size={17} />
+              AZ: 480-478-0447
             </a>
-            <Link
-              to="/services"
+            <a
+              href="tel:3123755548"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '0.5rem',
+                gap: '0.6rem',
                 fontFamily: 'var(--font-display)',
                 fontWeight: 700,
                 fontSize: 'clamp(0.9rem, 2vw, 1rem)',
-                letterSpacing: '0.07em',
+                letterSpacing: '0.04em',
                 textTransform: 'uppercase',
                 color: 'var(--fg)',
                 textDecoration: 'none',
@@ -193,18 +190,42 @@ export default function Home() {
               onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = 'var(--border-accent)'; el.style.color = 'var(--accent)' }}
               onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = 'oklch(40% 0.01 55)'; el.style.color = 'var(--fg)' }}
             >
-              See All Services
-              <ChevronRight size={16} />
+              <Phone size={15} />
+              IL: 312-375-5548
+            </a>
+            <Link
+              to="/services"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontFamily: 'var(--font-display)',
+                fontWeight: 700,
+                fontSize: 'clamp(0.9rem, 2vw, 1rem)',
+                letterSpacing: '0.07em',
+                textTransform: 'uppercase',
+                color: 'oklch(65% 0.01 55)',
+                textDecoration: 'none',
+                padding: '0.9rem 1.4rem',
+                borderRadius: '4px',
+                transition: 'color 0.2s',
+                minHeight: '52px',
+              }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.color = 'var(--fg)' }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.color = 'oklch(65% 0.01 55)' }}
+            >
+              All Services
+              <ChevronRight size={15} />
             </Link>
           </motion.div>
 
-          {/* Credential strip — replaces hero metric grid */}
+          {/* Credential strip */}
           <motion.div {...mv(0.32)}
             style={{
               display: 'flex',
-              gap: '0',
               flexWrap: 'wrap',
-              borderTop: '1px solid oklch(35% 0.01 55)',
+              gap: '0.6rem 0',
+              borderTop: '1px solid oklch(32% 0.01 55)',
               paddingTop: '1.5rem',
             }}
           >
@@ -213,65 +234,31 @@ export default function Home() {
               'Commercial & Residential',
               'Phoenix Valley · Chicagoland',
               'LIC #ROC200219 K-37',
-            ].map((cred, i) => (
+            ].map((cred, i, arr) => (
               <span
                 key={cred}
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontWeight: 600,
-                  fontSize: '0.78rem',
+                  fontSize: '0.77rem',
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: 'oklch(70% 0.01 55)',
-                  paddingRight: '1.25rem',
-                  marginRight: '1.25rem',
-                  borderRight: i < 3 ? '1px solid oklch(35% 0.01 55)' : 'none',
-                  lineHeight: 2,
+                  color: 'oklch(68% 0.01 55)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.9rem',
                 }}
               >
                 {cred}
+                {i < arr.length - 1 && (
+                  <span style={{ display: 'inline-block', width: '1px', height: '0.85em', background: 'oklch(35% 0.01 55)', verticalAlign: 'middle' }} aria-hidden="true" />
+                )}
               </span>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* ── Trust Bar ────────────────────────────────────────── */}
-      <section
-        style={{
-          background: 'var(--bg-2)',
-          borderTop: '1px solid var(--border)',
-          borderBottom: '1px solid var(--border)',
-          padding: '1.25rem clamp(1.25rem, 4vw, 2rem)',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: 'clamp(1.5rem, 5vw, 4rem)',
-            flexWrap: 'wrap',
-          }}
-        >
-          {[
-            { icon: <Shield size={15} />, text: 'Licensed & Insured' },
-            { icon: <Clock size={15} />, text: 'Commercial & Residential' },
-            { icon: <Award size={15} />, text: '35+ Years Experience' },
-            { icon: <Wrench size={15} />, text: 'Phoenix Valley & Chicagoland' },
-          ].map(({ icon, text }) => (
-            <div
-              key={text}
-              style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', color: 'var(--fg-muted)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.06em', fontFamily: 'var(--font-display)', textTransform: 'uppercase' }}
-            >
-              <span style={{ color: 'var(--accent)' }}>{icon}</span>
-              {text}
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* ── Services Grid ─────────────────────────────────────── */}
       <section style={{ padding: 'var(--section-pad) clamp(1.25rem, 4vw, 2rem)' }}>
@@ -294,11 +281,9 @@ export default function Home() {
               textTransform: 'uppercase',
               lineHeight: 0.95,
             }}>
-              Complete<br />
+              13 Core<br />
               <span style={{ color: 'var(--accent)' }}>Plumbing</span><br />
-              <span style={{ color: 'var(--fg-muted)', fontWeight: 300, fontSize: '0.65em', letterSpacing: '0.08em', display: 'block', marginTop: '0.5rem' }}>
-                SERVICES
-              </span>
+              <span style={{ color: 'var(--fg-muted)', fontWeight: 400 }}>Services</span>
             </h2>
             <div>
               <p style={{ color: 'var(--fg-muted)', lineHeight: 1.75, marginBottom: '1.5rem' }}>

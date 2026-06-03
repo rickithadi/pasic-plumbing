@@ -14,67 +14,54 @@ const services = [
     name: 'Water Heater Installation & Repair',
     description: 'Expert installation, repair, and replacement of traditional tank and tankless water heaters. We handle all major brands and both gas and electric systems.',
     link: '/water-heaters',
-    img: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&fm=webp&q=80',
   },
   {
     name: 'Sewer Surveillance',
     description: "High-definition camera inspections to diagnose blockages, root intrusions, and pipe damage without unnecessary excavation. Know exactly what's happening underground.",
-    img: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&fm=webp&q=80',
   },
   {
     name: 'Faucet Installation & Repair',
     description: 'Installation and repair of all faucet types — kitchen, bathroom, utility, and outdoor. We work with all major brands and fix drips, leaks, and pressure issues.',
-    img: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&fm=webp&q=80',
   },
   {
     name: 'Instant Hot Water Recirculating Line',
     description: 'Stop waiting for hot water. We install recirculating pump systems that deliver instant hot water to every tap, reducing water waste and improving comfort.',
-    img: null,
   },
   {
     name: 'Toilets',
     description: 'Complete toilet installation, repair, and replacement. From running toilets to full replacements, we handle the work cleanly and efficiently.',
-    img: null,
   },
   {
     name: 'Water Softener',
     description: 'Installation and service of water softener systems. Protect your pipes, appliances, and fixtures from hard water mineral buildup — especially important in Phoenix Valley.',
-    img: null,
   },
   {
     name: 'Sewer Line Repair',
     description: 'Full sewer line repair and replacement, including trenchless options where possible. We diagnose the problem accurately before recommending the right solution.',
-    img: null,
   },
   {
     name: 'Water Line Repair',
     description: 'Water main and supply line repair for both residential and commercial properties. Fast, effective, and minimally disruptive.',
-    img: null,
   },
   {
     name: 'Sump & Sewage Pump',
     description: 'Installation and service of sump pumps and sewage ejector pumps. Keep your basement dry and your property protected.',
-    img: null,
   },
   {
     name: 'Gas Piping',
     description: 'Licensed gas line installation and repair for residential and commercial properties. Safety-first approach to every gas system we touch.',
-    img: null,
   },
   {
     name: 'Underslab Repairs',
     description: 'Slab leak detection and repair. We locate the problem precisely to minimize damage to your foundation and flooring during the repair process.',
-    img: null,
   },
   {
     name: 'Garbage Disposal',
     description: 'Installation and repair of garbage disposal units. Quick turnaround — most jobs completed in a single visit.',
-    img: null,
   },
   {
     name: 'Replace Bathtub & Shower',
     description: 'Full bathtub and shower replacement services. We handle the plumbing side of your bathroom renovation cleanly and on schedule.',
-    img: null,
   },
 ]
 

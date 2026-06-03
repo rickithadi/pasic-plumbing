@@ -19,13 +19,35 @@ Score: TBD
 - 2 phone numbers (AZ + IL)
 
 ### Build gate
-- [ ] npm run build passed — pending
+- [x] npm run build passed — clean
 
 ### Outstanding (Image Placeholders)
 - Hero background: Unsplash placeholder — needs real job site/commercial photo
 - About portrait: Unsplash placeholder — needs Duke (Dusko) Pasic photo
 - Water heater page hero: Unsplash placeholder — needs real installation photo
 - Logo: text wordmark fallback — no extractable logo from Wix source
+
+---
+
+## Iteration 1
+Date: 2026-06-03
+Branch: rebuild/iter-1
+Score: ~31/40 (estimated pre-iter-2)
+
+### Changes
+- Removed hero metric stat block (anti-pattern) → editorial credential strip
+- Removed emoji client cards → numbered typographic list
+- Redesigned testimonials → featured pull-quote + two secondary
+- Broke repeated section header pattern in Services → asymmetric grid
+- Added skip-to-content link (accessibility)
+- Added body scroll lock when mobile nav is open
+- Bumped hero sub-body text contrast
+- Added id="main-content" to all pages
+
+### Build gate: PASS
+### Deployment: https://pasic-plumbing.vercel.app (HTTP 200 confirmed)
+
+---
 
 ### Client action items
 1. Formspree: formspree.io → New Form → VITE_FORMSPREE_ID in Vercel env vars
