@@ -49,6 +49,31 @@ Score: ~31/40 (estimated pre-iter-2)
 
 ---
 
+## Iteration 2
+Date: 2026-06-03
+Branch: rebuild/iter-2 → merged to main ✓ FINAL
+Score: ~35/40 (estimated)
+
+### Changes
+- Removed trust bar (verbatim duplicate of credential strip)
+- Added IL phone number (312-375-5548) to hero alongside AZ number
+- Fixed credential strip: inline separator elements, no border-right wrap bug
+- Fixed contact form select: added custom chevron arrow
+- Added hover states to contact page phone links
+- Added response-time copy ("reply within one business day")
+- Fixed Services heading: replaced weight-300 "SERVICES" sub-label
+- Removed dead `img` fields from Services data
+- Removed dead `featured` field from testimonials data
+- Deployed to production: https://pasic-plumbing.vercel.app (HTTP 200 ✓)
+
+### Build gate: PASS
+### Anti-patterns: PASS
+### Mobile check: PASS (all pages have 68px nav offset, min 44px touch targets)
+### Regression check: PASS (navbar, hero, contact form, footer all present)
+### Deployment: https://pasic-plumbing.vercel.app (HTTP 200 confirmed)
+
+---
+
 ### Client action items
 1. Formspree: formspree.io → New Form → VITE_FORMSPREE_ID in Vercel env vars
 2. Photography: 3 Unsplash placeholders — see CONTENT.md § Image Placeholders
