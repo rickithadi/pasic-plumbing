@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* ── Design tokens ───────────────────────────────────────────── */
+:root {
+  /* Brand palette — industrial desert warmth */
+  --bg:           oklch(14% 0.012 55);
+  --bg-2:         oklch(18% 0.012 55);
+  --bg-3:         oklch(22% 0.012 55);
+  --fg:           oklch(93% 0.008 55);
+  --fg-muted:     oklch(65% 0.01 55);
+  --accent:       oklch(62% 0.18 42);
+  --accent-hover: oklch(68% 0.20 42);
+  --accent-dim:   oklch(30% 0.09 42);
+  --gold:         oklch(76% 0.12 60);
+  --border:       oklch(28% 0.01 55);
+  --border-accent:oklch(40% 0.12 42);
+
+  --font-display: 'Barlow Condensed', system-ui, sans-serif;
+  --font-body:    'Barlow', system-ui, sans-serif;
+
+  --section-pad: clamp(4rem, 8vw, 7rem);
+}
+
+/* ── Base ────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Focus ───────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ── Selection ───────────────────────────────────────────────── */
+::selection {
+  background: var(--accent-dim);
+  color: var(--fg);
+}
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-accent); border-radius: 3px; }

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pasicplumbing.com/sitemap.xml
