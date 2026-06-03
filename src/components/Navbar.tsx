@@ -66,22 +66,37 @@ export default function Navbar() {
           gap: '2rem',
         }}
       >
-        {/* Wordmark */}
+        {/* Logo + Wordmark */}
         <Link
           to="/"
           style={{
-            fontFamily: 'var(--font-display)',
-            fontWeight: 800,
-            fontSize: 'clamp(1.1rem, 2.5vw, 1.35rem)',
-            letterSpacing: '0.06em',
-            textTransform: 'uppercase',
-            color: 'var(--fg)',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.6rem',
             textDecoration: 'none',
             lineHeight: 1,
           }}
         >
-          <span style={{ color: 'var(--accent)' }}>Pasic</span>
-          {' '}Plumbing
+          <img
+            src="/logo.jpg"
+            alt="Pasic Plumbing logo"
+            width={36}
+            height={36}
+            style={{ borderRadius: '4px', flexShrink: 0 }}
+          />
+          <span
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 800,
+              fontSize: 'clamp(1.05rem, 2.5vw, 1.3rem)',
+              letterSpacing: '0.06em',
+              textTransform: 'uppercase',
+              color: 'var(--fg)',
+            }}
+          >
+            <span style={{ color: 'var(--accent)' }}>Pasic</span>
+            {' '}Plumbing
+          </span>
         </Link>
 
         {/* Desktop links */}

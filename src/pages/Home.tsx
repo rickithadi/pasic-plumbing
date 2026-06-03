@@ -71,7 +71,7 @@ export default function Home() {
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: `url(https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&fm=webp&q=80)`,
+            backgroundImage: `url(https://static.wixstatic.com/media/8358d6_e004bcabaa814f0ca65527688c4af2c4~mv2.jpg/v1/fill/w_1600,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_auto,quality_auto/image.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center 40%',
           }}
@@ -385,10 +385,9 @@ export default function Home() {
           <motion.div {...mv()}>
             <div style={{ position: 'relative', borderRadius: '6px', overflow: 'hidden', aspectRatio: '4/3' }}>
               <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&fm=webp&q=80"
-                alt="Professional plumber at work"
+                src="https://static.wixstatic.com/media/8358d6_994044ca969245d690de3a0496ec95ce~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_auto,quality_auto/arizona%20commercial%20plumber.jpg"
+                alt="Pasic Plumbing — Arizona commercial plumbing work"
                 loading="lazy"
-                data-replace="owner Duke Pasic portrait or job site photo"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
               <div style={{ position: 'absolute', bottom: '1.25rem', left: '1.25rem', background: 'var(--accent)', color: 'var(--bg)', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.4rem 0.85rem', borderRadius: '3px' }}>

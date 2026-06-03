@@ -82,13 +82,11 @@ export default function WaterHeaters() {
                 marginBottom: '4rem',
               }}
             >
-              {/* data-replace: tankless water heater installation photo */}
               <img
-                src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1400&fm=webp&q=80"
-                alt="Professional water heater installation"
+                src="https://static.wixstatic.com/media/8358d6_cfeaac2065fc4bbf859062bfd5fd7761~mv2.jpg/v1/fill/w_1400,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_auto,quality_auto/rheem-tankless-water-heater_edited.jpg"
+                alt="Rheem tankless water heater installation by Pasic Plumbing"
                 loading="eager"
-                data-replace="tankless water heater installation photo"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 60%' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 50%' }}
               />
               <div
                 style={{

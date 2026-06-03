@@ -67,12 +67,10 @@ export default function About() {
         >
           <motion.div {...mv()}>
             <div style={{ position: 'relative', borderRadius: '6px', overflow: 'hidden', aspectRatio: '3/4' }}>
-              {/* data-replace: Duke/Dusko Pasic portrait */}
               <img
-                src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&fm=webp&q=80"
-                alt="Pasic Plumbing — professional plumber"
+                src="https://static.wixstatic.com/media/8358d6_31e3d5fa33d9414894576aafeda5ee1d~mv2.jpg/v1/fill/w_700,h_880,al_c,q_85,usm_0.66_1.00_0.01,enc_auto,quality_auto/image.jpg"
+                alt="Pasic Plumbing team"
                 loading="lazy"
-                data-replace="Duke (Dusko) Pasic portrait or team photo"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
               <div

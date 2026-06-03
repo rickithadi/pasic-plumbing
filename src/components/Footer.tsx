@@ -33,18 +33,20 @@ export default function Footer() {
         >
           {/* Brand */}
           <div>
-            <p
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontWeight: 800,
-                fontSize: '1.3rem',
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-                marginBottom: '0.75rem',
-              }}
-            >
-              <span style={{ color: 'var(--accent)' }}>Pasic</span> Plumbing
-            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem' }}>
+              <img src="/logo.jpg" alt="Pasic Plumbing logo" width={36} height={36} style={{ borderRadius: '4px', flexShrink: 0 }} />
+              <p
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 800,
+                  fontSize: '1.3rem',
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                <span style={{ color: 'var(--accent)' }}>Pasic</span> Plumbing
+              </p>
+            </div>
             <p style={{ color: 'var(--fg-muted)', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '1rem' }}>
               Family-owned plumbing contractors with 35+ years of trusted commercial &amp; residential service.
             </p>
