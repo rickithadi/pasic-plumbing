@@ -32,7 +32,15 @@ export default function Navbar() {
     return () => document.removeEventListener('keydown', onKey)
   }, [])
 
+  // Lock body scroll when mobile nav is open
+  useEffect(() => {
+    document.body.classList.toggle('nav-open', open)
+    return () => { document.body.classList.remove('nav-open') }
+  }, [open])
+
   return (
+    <>
+    <a href="#main-content" className="skip-link">Skip to content</a>
     <header
       style={{
         position: 'fixed',
@@ -237,5 +245,6 @@ export default function Navbar() {
         }
       `}</style>
     </header>
+    </>
   )
 }

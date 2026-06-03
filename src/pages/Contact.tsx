@@ -81,7 +81,7 @@ export default function Contact() {
   }
 
   return (
-    <main style={{ paddingTop: '68px' }}>
+    <main id="main-content" style={{ paddingTop: '68px' }}>
 
       {/* Page header */}
       <section
@@ -115,7 +115,7 @@ export default function Contact() {
             <span style={{ color: 'var(--fg-muted)', fontWeight: 400 }}>Pasic Plumbing</span>
           </h1>
           <p style={{ color: 'var(--fg-muted)', maxWidth: '420px', lineHeight: 1.75, fontSize: '1.05rem' }}>
-            Call for the fastest response. For non-urgent inquiries, use the form below.
+            Call for the fastest response. For non-urgent inquiries, use the form below — we reply within one business day.
           </p>
         </div>
       </section>
@@ -158,7 +158,12 @@ export default function Contact() {
                   <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--fg-muted)', marginBottom: '0.4rem' }}>
                     Arizona (Phoenix Valley)
                   </p>
-                  <a href="tel:4804780447" style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: 'var(--fg)', textDecoration: 'none' }}>
+                  <a
+                    href="tel:4804780447"
+                    style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: 'var(--fg)', textDecoration: 'none', transition: 'color 0.15s' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--accent)' }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--fg)' }}
+                  >
                     480-478-0447
                   </a>
                 </div>
@@ -176,7 +181,12 @@ export default function Contact() {
                   <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--fg-muted)', marginBottom: '0.4rem' }}>
                     Illinois (Chicagoland)
                   </p>
-                  <a href="tel:3123755548" style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: 'var(--fg)', textDecoration: 'none' }}>
+                  <a
+                    href="tel:3123755548"
+                    style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: 'var(--fg)', textDecoration: 'none', transition: 'color 0.15s' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--accent)' }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--fg)' }}
+                  >
                     312-375-5548
                   </a>
                 </div>
@@ -320,25 +330,37 @@ export default function Contact() {
                 </div>
                 <div>
                   <label htmlFor="service" style={labelStyle}>Service Needed</label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={form.service}
-                    onChange={handleChange}
-                    style={{ ...inputStyle, cursor: 'pointer', appearance: 'none' }}
-                    onFocus={e => { (e.target as HTMLSelectElement).style.borderColor = 'var(--border-accent)' }}
-                    onBlur={e => { (e.target as HTMLSelectElement).style.borderColor = 'var(--border)' }}
-                  >
-                    <option value="">Select a service…</option>
-                    <option>Water Heater Installation & Repair</option>
-                    <option>Sewer Surveillance</option>
-                    <option>Faucet Installation & Repair</option>
-                    <option>Sewer Line Repair</option>
-                    <option>Water Line Repair</option>
-                    <option>Gas Piping</option>
-                    <option>Underslab Repairs</option>
-                    <option>Other</option>
-                  </select>
+                  <div style={{ position: 'relative' }}>
+                    <select
+                      id="service"
+                      name="service"
+                      value={form.service}
+                      onChange={handleChange}
+                      style={{ ...inputStyle, cursor: 'pointer', appearance: 'none', paddingRight: '2.5rem' }}
+                      onFocus={e => { (e.target as HTMLSelectElement).style.borderColor = 'var(--border-accent)' }}
+                      onBlur={e => { (e.target as HTMLSelectElement).style.borderColor = 'var(--border)' }}
+                    >
+                      <option value="">Select a service…</option>
+                      <option>Water Heater Installation & Repair</option>
+                      <option>Sewer Surveillance</option>
+                      <option>Faucet Installation & Repair</option>
+                      <option>Sewer Line Repair</option>
+                      <option>Water Line Repair</option>
+                      <option>Gas Piping</option>
+                      <option>Underslab Repairs</option>
+                      <option>Other</option>
+                    </select>
+                    {/* Custom dropdown arrow */}
+                    <span style={{
+                      position: 'absolute',
+                      right: '0.85rem',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      pointerEvents: 'none',
+                      color: 'var(--fg-muted)',
+                      fontSize: '0.7rem',
+                    }} aria-hidden="true">▼</span>
+                  </div>
                 </div>
                 <div>
                   <label htmlFor="message" style={labelStyle}>Message</label>
