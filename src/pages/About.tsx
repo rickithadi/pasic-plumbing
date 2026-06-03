@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { Shield, Users, MapPin, ChevronRight, Phone } from 'lucide-react'
+import { ChevronRight, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const fadeUp = (delay = 0) => ({
@@ -119,39 +119,32 @@ export default function About() {
               </p>
             </motion.div>
 
-            {/* Credential badges */}
-            <motion.div
-              {...mv(0.2)}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1rem',
-              }}
-            >
-              {[
-                { icon: <Shield size={18} />, label: 'Fully Licensed & Insured', sub: 'Arizona License ROC200219 K-37' },
-                { icon: <Users size={18} />, label: 'Family-Owned & Operated', sub: 'Local business, personal service' },
-                { icon: <MapPin size={18} />, label: 'Two-State Coverage', sub: 'Phoenix Valley, AZ · Chicagoland, IL' },
-              ].map(({ icon, label, sub }) => (
-                <div
-                  key={label}
-                  style={{
-                    display: 'flex',
-                    gap: '1rem',
-                    alignItems: 'flex-start',
-                    padding: '1rem 1.25rem',
-                    background: 'var(--bg-2)',
-                    border: '1px solid var(--border)',
-                    borderRadius: '6px',
-                  }}
-                >
-                  <span style={{ color: 'var(--accent)', marginTop: '2px', flexShrink: 0 }}>{icon}</span>
-                  <div>
-                    <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.95rem' }}>{label}</p>
-                    <p style={{ color: 'var(--fg-muted)', fontSize: '0.83rem', marginTop: '0.2rem' }}>{sub}</p>
+            {/* Credentials — clean list, no repeated card pattern */}
+            <motion.div {...mv(0.2)}>
+              <div
+                style={{
+                  borderTop: '1px solid var(--border)',
+                  paddingTop: '1.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1rem',
+                }}
+              >
+                {[
+                  { label: 'Fully Licensed & Insured', detail: 'Arizona ROC200219 K-37' },
+                  { label: 'Family-Owned & Operated', detail: 'Scottsdale, AZ · Est. 1989' },
+                  { label: 'Two-State Coverage', detail: 'Phoenix Valley, AZ · Chicagoland, IL' },
+                ].map(({ label, detail }) => (
+                  <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '1rem', flexWrap: 'wrap' }}>
+                    <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.95rem' }}>
+                      {label}
+                    </span>
+                    <span style={{ color: 'var(--fg-muted)', fontSize: '0.82rem', fontFamily: 'var(--font-display)', fontWeight: 500, letterSpacing: '0.03em', flexShrink: 0 }}>
+                      {detail}
+                    </span>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>

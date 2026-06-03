@@ -147,51 +147,51 @@ export default function Home() {
               href="tel:4804780447"
               style={{
                 display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.6rem',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                gap: '0.1rem',
                 fontFamily: 'var(--font-display)',
-                fontWeight: 800,
-                fontSize: 'clamp(1rem, 2.5vw, 1.1rem)',
-                letterSpacing: '0.04em',
-                textTransform: 'uppercase',
                 color: 'var(--bg)',
                 background: 'var(--accent)',
                 textDecoration: 'none',
-                padding: '0.9rem 1.8rem',
+                padding: '0.75rem 1.5rem',
                 borderRadius: '4px',
                 transition: 'background 0.2s, transform 0.15s',
                 minHeight: '52px',
+                justifyContent: 'center',
               }}
               onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.background = 'var(--accent-hover)'; el.style.transform = 'translateY(-1px)' }}
               onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.background = 'var(--accent)'; el.style.transform = 'translateY(0)' }}
             >
-              <Phone size={17} />
-              Phoenix Valley
+              <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', opacity: 0.75 }}>Phoenix Valley</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontWeight: 900, fontSize: 'clamp(0.95rem, 2.2vw, 1.1rem)', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                <Phone size={14} />480-478-0447
+              </span>
             </a>
             <a
               href="tel:3123755548"
               style={{
                 display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.6rem',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                gap: '0.1rem',
                 fontFamily: 'var(--font-display)',
-                fontWeight: 700,
-                fontSize: 'clamp(0.9rem, 2vw, 1rem)',
-                letterSpacing: '0.04em',
-                textTransform: 'uppercase',
                 color: 'var(--fg)',
                 textDecoration: 'none',
-                padding: '0.9rem 1.6rem',
+                padding: '0.75rem 1.5rem',
                 borderRadius: '4px',
                 border: '1px solid oklch(40% 0.01 55)',
-                transition: 'border-color 0.2s, color 0.2s',
+                transition: 'border-color 0.2s',
                 minHeight: '52px',
+                justifyContent: 'center',
               }}
-              onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = 'var(--border-accent)'; el.style.color = 'var(--accent)' }}
-              onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = 'oklch(40% 0.01 55)'; el.style.color = 'var(--fg)' }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = 'var(--border-accent)' }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = 'oklch(40% 0.01 55)' }}
             >
-              <Phone size={15} />
-              Chicagoland
+              <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(60% 0.01 55)' }}>Chicagoland</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontWeight: 800, fontSize: 'clamp(0.85rem, 2vw, 1rem)', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                <Phone size={13} />312-375-5548
+              </span>
             </a>
             <Link
               to="/services"
@@ -206,7 +206,7 @@ export default function Home() {
                 textTransform: 'uppercase',
                 color: 'oklch(65% 0.01 55)',
                 textDecoration: 'none',
-                padding: '0.9rem 1.4rem',
+                padding: '0.75rem 1.4rem',
                 borderRadius: '4px',
                 transition: 'color 0.2s',
                 minHeight: '52px',

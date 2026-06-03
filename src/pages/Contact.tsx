@@ -392,8 +392,12 @@ export default function Contact() {
                   }}>
                     <AlertCircle size={16} style={{ color: 'var(--accent)', flexShrink: 0 }} />
                     <span>
-                      Something went wrong. Please call us directly at{' '}
-                      <a href="tel:4804780447" style={{ color: 'var(--accent)', fontWeight: 600 }}>480-478-0447</a>.
+                      {!import.meta.env.VITE_FORMSPREE_ID
+                        ? 'The contact form isn\'t set up yet. Please call us directly at '
+                        : 'Something went wrong. Please call us at '}
+                      <a href="tel:4804780447" style={{ color: 'var(--accent)', fontWeight: 600 }}>480-478-0447</a>
+                      {' '}or{' '}
+                      <a href="tel:3123755548" style={{ color: 'var(--accent)', fontWeight: 600 }}>312-375-5548</a>.
                     </span>
                   </div>
                 )}

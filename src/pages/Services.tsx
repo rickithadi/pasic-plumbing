@@ -242,26 +242,38 @@ export default function Services() {
       {/* CTA */}
       <section
         style={{
-          background: 'var(--bg-2)',
-          borderTop: '1px solid var(--border)',
+          background: 'var(--accent)',
           padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 4vw, 2rem)',
-          textAlign: 'center',
         }}
       >
-        <motion.div {...mv()}>
-          <h2 style={{
-            fontFamily: 'var(--font-display)',
-            fontWeight: 900,
-            fontSize: 'clamp(1.6rem, 4vw, 2.6rem)',
-            textTransform: 'uppercase',
-            marginBottom: '0.75rem',
-          }}>
-            Don't see what you need?
-          </h2>
-          <p style={{ color: 'var(--fg-muted)', marginBottom: '2rem', maxWidth: '400px', margin: '0 auto 2rem' }}>
-            Call us — chances are we handle it. 35 years of experience covers a lot of ground.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '2rem',
+            flexWrap: 'wrap',
+          }}
+        >
+          <motion.div {...mv()}>
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 900,
+              fontSize: 'clamp(1.6rem, 4vw, 2.6rem)',
+              textTransform: 'uppercase',
+              color: 'var(--bg)',
+              marginBottom: '0.4rem',
+              lineHeight: 0.95,
+            }}>
+              Ready to Schedule?
+            </h2>
+            <p style={{ color: 'oklch(14% 0.012 55 / 0.65)', fontSize: '0.9rem' }}>
+              Call your region — we respond fast and give honest quotes.
+            </p>
+          </motion.div>
+          <motion.div {...mv(0.1)} style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
             <a
               href="tel:4804780447"
               style={{
@@ -270,42 +282,43 @@ export default function Services() {
                 gap: '0.6rem',
                 fontFamily: 'var(--font-display)',
                 fontWeight: 800,
-                fontSize: '1rem',
+                fontSize: '0.95rem',
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
-                color: 'var(--bg)',
-                background: 'var(--accent)',
+                color: 'var(--accent)',
+                background: 'var(--bg)',
                 textDecoration: 'none',
-                padding: '0.9rem 1.8rem',
+                padding: '0.85rem 1.5rem',
                 borderRadius: '4px',
                 minHeight: '48px',
               }}
             >
-              <Phone size={16} /> 480-478-0447
+              <Phone size={15} /> 480-478-0447
             </a>
-            <Link
-              to="/contact"
+            <a
+              href="tel:3123755548"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '0.4rem',
+                gap: '0.6rem',
                 fontFamily: 'var(--font-display)',
                 fontWeight: 700,
-                fontSize: '1rem',
+                fontSize: '0.95rem',
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
-                color: 'var(--fg)',
+                color: 'var(--bg)',
+                background: 'transparent',
                 textDecoration: 'none',
-                padding: '0.9rem 1.8rem',
+                padding: '0.85rem 1.5rem',
                 borderRadius: '4px',
-                border: '1px solid var(--border)',
+                border: '2px solid oklch(14% 0.012 55 / 0.35)',
                 minHeight: '48px',
               }}
             >
-              Send a Message <ChevronRight size={15} />
-            </Link>
-          </div>
-        </motion.div>
+              <Phone size={15} /> 312-375-5548
+            </a>
+          </motion.div>
+        </div>
       </section>
 
     </main>

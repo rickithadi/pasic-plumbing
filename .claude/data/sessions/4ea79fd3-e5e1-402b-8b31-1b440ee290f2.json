@@ -5,6 +5,9 @@
     "the actual assets should be used",
     "\u276f why didnt the rebuild skill do it in the first pass?",
     "do that",
-    "do a pass of the website and make sure we have content and asset priority. make it look more proffesional and less AI. run a critique loop"
+    "do a pass of the website and make sure we have content and asset priority. make it look more proffesional and less AI. run a critique loop",
+    "stop running vercel deploy. isnt it already in the skill file not to do that?",
+    "why didnt these iterations continue. its stopped at 2",
+    "ok continue"
   ]
 }
